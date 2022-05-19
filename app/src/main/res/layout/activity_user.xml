@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    tools:context=".UserActivity">
+
+    <TextView
+        android:id="@+id/letter"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="80dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="#"
+        android:textSize="50sp"
+        android:textColor="#FF595959"
+        android:background="@drawable/circle"/>
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/letter"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:text="#"
+        android:textSize="30sp"
+        android:textColor="#FF595959"/>
+
+    <EditText
+        android:id="@+id/nameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="50dp"
+        android:textSize="30sp"
+        android:textColor="#FF595959"
+        android:hint="姓名" />
+
+    <EditText
+        android:id="@+id/telephoneEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nameEditText"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="50dp"
+        android:hint="电话号码"
+        android:textColor="#FF595959"
+        android:textSize="30sp" />
+
+    <EditText
+        android:id="@+id/workplaceEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/telephoneEditText"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="50dp"
+        android:textSize="30sp"
+        android:textColor="#FF595959"
+        android:hint="工作单位" />
+
+    <EditText
+        android:id="@+id/addressEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/workplaceEditText"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="50dp"
+        android:textSize="30sp"
+        android:textColor="#FF595959"
+        android:hint="家庭住址" />
+
+
+</RelativeLayout>

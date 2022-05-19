@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:id="@+id/user"
+        android:layout_width="345dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:background="@drawable/vc_bg"
+        tools:ignore="MissingConstraints">
+
+        <RelativeLayout
+            android:id="@+id/a"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/circle"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/letter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="C"
+                android:textColor="#FF595959"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@id/a">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cola"
+                android:textColor="#FF595959"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/workplace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/name"
+                android:text="上海市米哈游公司"
+                android:textColor="#FF595959"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/workplace"
+                android:text="浙江省杭州市西湖区浙江工业大学"
+                android:textColor="#FF595959"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/telephone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/address"
+                android:layout_marginTop="5dp"
+                android:text="577 14 22 41"
+                android:textColor="#FF9B9B9B"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

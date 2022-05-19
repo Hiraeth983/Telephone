@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/workspace/AndroidStudioWorkSpace/Telephone/app/src/main/res/drawable/circle.xml" value="0.1575" />
+        <entry key="..\:/workspace/AndroidStudioWorkSpace/Telephone/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/workspace/AndroidStudioWorkSpace/Telephone/app/src/main/res/layout/activity_user.xml" value="0.1671195652173913" />
+        <entry key="..\:/workspace/AndroidStudioWorkSpace/Telephone/app/src/main/res/layout/menueditor.xml" value="0.1671195652173913" />
+        <entry key="..\:/workspace/AndroidStudioWorkSpace/Telephone/app/src/main/res/layout/searchmenu.xml" value="0.1671195652173913" />
+        <entry key="..\:/workspace/AndroidStudioWorkSpace/Telephone/app/src/main/res/layout/view_contact.xml" value="0.4" />
+        <entry key="..\:/workspace/AndroidStudioWorkSpace/Telephone/app/src/main/res/menu/menueditor.xml" value="0.25364583333333335" />
+        <entry key="..\:/workspace/AndroidStudioWorkSpace/Telephone/app/src/main/res/menu/modify.xml" value="0.25364583333333335" />
+        <entry key="..\:/workspace/AndroidStudioWorkSpace/Telephone/app/src/main/res/menu/searchmenu.xml" value="0.25364583333333335" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
