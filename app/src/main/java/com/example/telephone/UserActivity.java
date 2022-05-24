@@ -51,7 +51,6 @@ public class UserActivity extends AppCompatActivity implements LoaderManager.Loa
         }
     };
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,7 +68,7 @@ public class UserActivity extends AppCompatActivity implements LoaderManager.Loa
         workplaceEditText = findViewById(R.id.workplaceEditText);
         addressEditText = findViewById(R.id.addressEditText);
 
-        // 新建联系人
+        // 此处判断是编辑模式还是新建模式
         if (currentContactUri == null) {
             setTitle("新建联系人");
             // 在新建联系人时隐藏删除按钮
@@ -161,7 +160,7 @@ public class UserActivity extends AppCompatActivity implements LoaderManager.Loa
         }
 
         if (cursor.moveToFirst()) {
-            // 获取对印的索引
+            // 获取对应的索引
             int name = cursor.getColumnIndex(Contact.ContactEntry.COLUMN_NAME);
             int telephone = cursor.getColumnIndex(Contact.ContactEntry.COLUMN_TELEPHONE);
             int address = cursor.getColumnIndex(Contact.ContactEntry.COLUMN_ADDRESS);
@@ -266,84 +265,59 @@ public class UserActivity extends AppCompatActivity implements LoaderManager.Loa
     }
 
     // 编辑界面的用户返回确认功能
-    private void showUnsavedChangesDialog(
-            DialogInterface.OnClickListener discardButtonClickListener) {
-        // Create an AlertDialog.Builder and set the message, and click listeners
-        // for the positive and negative buttons on the dialog.
+    private void showUnsavedChangesDialog(DialogInterface.OnClickListener discardButtonClickListener) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("是否放弃修改？");
         builder.setPositiveButton("放弃", discardButtonClickListener);
         builder.setNegativeButton("继续编辑", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                // User clicked the "Keep editing" button, so dismiss the dialog
-                // and continue editing the product.
                 if (dialog != null) {
                     dialog.dismiss();
                 }
             }
         });
-
-        // Create and show the AlertDialog
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
     }
 
     // 编辑界面的确认删除功能
     private void showDeleteConfirmationDialog() {
-        // Create an AlertDialog.Builder and set the message, and click listeners
-        // for the positive and negative buttons on the dialog.
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("删除此联系人？");
         builder.setPositiveButton("删除", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                // User clicked the "Delete" button, so delete the product.
                 deleteProduct();
             }
         });
         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                // User clicked the "Cancel" button, so dismiss the dialog
-                // and continue editing the product.
                 if (dialog != null) {
                     dialog.dismiss();
                 }
             }
         });
-
-        // Create and show the AlertDialog
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
     }
 
     // 删除选中的联系人
     private void deleteProduct() {
-        // Only perform the delete if this is an existing product.
         if (currentContactUri != null) {
-            // Call the ContentResolver to delete the product at the given content URI.
-            // Pass in null for the selection and selection args because the mCurrentProductUri
-            // content URI already identifies the product that we want.
             int rowsDeleted = getContentResolver().delete(currentContactUri, null, null);
-
-            // Show a toast message depending on whether or not the delete was successful.
             if (rowsDeleted == 0) {
-                // If no rows were deleted, then there was an error with the delete.
                 Toast.makeText(this, "删除失败",
                         Toast.LENGTH_SHORT).show();
             } else {
-                // Otherwise, the delete was successful and we can display a toast.
                 Toast.makeText(this, "删除成功",
                         Toast.LENGTH_SHORT).show();
             }
         }
-
-        // Close the activity
         finish();
     }
 
     // 在编辑页面按下返回键
     @Override
     public void onBackPressed() {
-        // If the product hasn't changed, continue with handling back button press
         if (!mContactHasChanged) {
             super.onBackPressed();
             return;
@@ -353,12 +327,9 @@ public class UserActivity extends AppCompatActivity implements LoaderManager.Loa
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        // User clicked "Discard" button, close the current activity.
                         finish();
                     }
                 };
-
-        // Show dialog that there are unsaved changes
         showUnsavedChangesDialog(discardButtonClickListener);
     }
 }

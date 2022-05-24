@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     public ListView listView;
     public MyCursorAdapter adapter;
     public static final int CONTACTLOADER = 0;
+    public Timer timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         // 激活Loader
         getLoaderManager().initLoader(CONTACTLOADER, null, this);
 
-        Timer timer = new Timer();
+        timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
@@ -85,11 +86,11 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                         ContactEntry.COLUMN_TIME);
                 show(cursor);
             }
-        }, 0, 30000);
+        }, 0, 20000);
     }
 
     public void showMsg(final String msg) {
-        // TODO Auto-generated method stub
+
         Handler handler = new Handler(Looper.getMainLooper());
         handler.post(new Runnable() {
             @Override
@@ -237,5 +238,11 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
         adapter.swapCursor(null);
+    }
+
+    @Override
+    protected void onDestroy() {
+        timer.cancel();
+        super.onDestroy();
     }
 }

@@ -69,6 +69,7 @@ public class MyContentProvider extends ContentProvider {
                 throw new IllegalArgumentException("Cant Query" + uri);
         }
 
+        //
         cursor.setNotificationUri(getContext().getContentResolver(), uri);
         return cursor;
     }
